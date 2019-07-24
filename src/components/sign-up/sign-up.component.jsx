@@ -29,7 +29,6 @@ class SignUp extends React.Component {
       alert("passwords don't match");
       return;
     }
-
     signUpStart({ displayName, email, password });
   };
 
@@ -40,7 +39,6 @@ class SignUp extends React.Component {
   };
 
   render() {
-    
     const { displayName, email, password, confirmPassword } = this.state;
     return (
       <SignUpContainer>
@@ -88,6 +86,9 @@ class SignUp extends React.Component {
 
 const mapDispatchToProps = dispatch => ({
   signUpStart: userCredentials => dispatch(signUpStart(userCredentials))
-})
+});
 
-export default connect(null, mapDispatchToProps)(SignUp);
+export default connect(
+  null,
+  mapDispatchToProps
+)(SignUp);
